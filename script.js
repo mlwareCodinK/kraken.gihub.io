@@ -1,3 +1,7 @@
+let tg = window.Telegram.WebApp
+
+tg.expand();
+
 
 
 
@@ -197,6 +201,9 @@ for (let i=0;i<shop.length;i++){
 	shop[i].update() //buttons txt & price
 }
 
+
+
+
 //set main clicker function onClick
 element.clicker.onclick = function() { 
 	element.clicker.disabled = true;
@@ -204,21 +211,17 @@ element.clicker.onclick = function() {
 	energyforbar  = energy / 10
 	updateProgressBar(energyforbar)
 	element.clicker.disabled = false;
-   
+  
 }
 	
 
 
+let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
 
-function updateEnergy() 
-{
-
-
-		
-	
-
-}
+let userid = document.createElement('p'); //создаем еще параграф 
+userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
+usercard.appendChild(userid); //добавляем
 
 
 
