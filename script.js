@@ -2,7 +2,7 @@ let tg = window.Telegram.WebApp
 
 tg.expand();
 
-
+let gghh
 
 
 
@@ -218,10 +218,9 @@ element.clicker.onclick = function() {
 
 let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
+gghh = `${tg.id}`
+usercard.innerText = gghh
 
-let userid = document.createElement('p'); //создаем еще параграф 
-userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
-usercard.appendChild(userid); //добавляем
 
 
 
