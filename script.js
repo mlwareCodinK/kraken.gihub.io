@@ -24,8 +24,6 @@ var money = 0,//global player's money
 let energy = 1000; // Начальное значение переменной energy
 
 
-
-
 var element = {
 	clicker   : document.getElementById("main-clicker"),//button
 	money     : document.getElementById("money"),//txt
@@ -62,13 +60,20 @@ function increaseEnergy() {
 	}
   }
   
+function progress(){
+	energyforbar  = energy / 10
+    updateProgressBar(energyforbar)
+}
+
+
+  
   // Запускаем функцию increaseEnergy каждую секунду
 const intervalID = setInterval(increaseEnergy, 1000);
 
   function updateBar(check=true){
 	text1 = " " + energy
     energyforbar = energy / 10
-	
+	progress()
 	
 	
 	
@@ -175,21 +180,14 @@ class ShopElement{
 //       							 =============== SHOP BUTTONS & FUNCTIONS ===============
 
 //alls buttons functions ( newPriceFormula , onClick )
-function newPrice1(obj){obj.price = clickGain * 25 * obj.purchaseLvl;}
-function newPrice2(obj){obj.price = 200 * obj.purchaseLvl;}
-function newPrice3(obj){obj.price = autoGain * 30 * obj.purchaseLvl + 500;}
-function onClick1(obj){clickGain*=2;}
-function onClick2(obj){autoMoney(this.purchaseLvl);}
-function onClick3(obj){autoGain*=2;}
+
 
 
 
 
 //all shop's buttons
 shop = [
-	new ShopElement("b1",newPrice1,onClick1),
-	new ShopElement("b2",newPrice2,onClick2),
-	new ShopElement("b3",newPrice3,onClick3),
+
 	
 ];
 
@@ -218,7 +216,7 @@ element.clicker.onclick = function() {
 
 let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
-gghh = `${tg.id}`
+gghh = `${tg.ss}`
 usercard.innerText = gghh
 
 
